@@ -96,15 +96,15 @@ eg:
 bomb: when destroyed, destroy all blocks above this block
 paintbrush: on landing, convert all blocks to the same color as this block
 desert-eye: on landing, convert all blocks in a 5x5 radius to sand
-box-filler: when destroyed, fill in a random hole that can't be accessed
+filler: when destroyed, fill in a random hole that can't be accessed
 anchor: whilst this block is on the board, [COLOR] currency cannot go below 1
 ghoul: convert the next piece to a ghostly-piece
 cross: when destroyed, if this block is the only [COLOR] piece in the row, earns 20x points.
 nuke: when destroyed, if this block is the only [COLOR] piece in the row, destroy EVERY block.
 skull: when destroyed, if this block is the only [COLOR] piece in the row, destroy EVERY block.
-Jinx: on landing, the next piece becomes a 1x1 single block
-Debt: Adds +10 [COLOR] when destroyed, but costs 1 [COLOR] every turn it's on the board
-Veteran: Earns +1 bonus currency for every other block in your deck that shares its color.
+jinx: on landing, the next piece becomes a 1x1 single block
+debt: Adds +10 [COLOR] when destroyed, but costs 1 [COLOR] every turn it's on the board
+veteran: Earns +1 bonus currency for every [COLOR] piece in your deck. (currently X)
 ```
 
 
