@@ -48,7 +48,7 @@ or
 ```
 ```lua
 Piece = {
-    blocks = Map<(x,y), Block>,
+    blocks = {(x,y) = Block}, -- map of block positions
     rotation = 0 or 1 or 2 or 3
 }
 ```
@@ -73,9 +73,39 @@ Block = {
 
 ### Blocks: (Materials)
 Block-materials are like little simple "modifiers" to blocks.
+(Most blocks have `block.material = Normal`)
+eg:
+```
+normal: (default, does nothing)
+sand: this block will fall down to ground
+stone: this block cannot be rotated
+shiny: this block earns x3 resources
+shiny: this block earns x3 resources
+```
+Generally, block-materials should be SIMPLE and MINIMAL.
+
 
 ### Blocks: (Sigils)
-Block-sigils are like 
+Block-sigils are like the ultra-special sauce for this game.  
+It's essentially just a little decal on top of blocks, that cause additional effects.
+(Most blocks have `block.sigil = nil`)
+
+Sigils can have *CRAZY* effects; should be something the player focuses a lot on.
+eg:
+```
+bomb: when destroyed, destroy all blocks above this block
+paintbrush: on landing, convert all blocks to the same color as this block
+desert-eye: on landing, convert all blocks in a 5x5 radius to sand
+box-filler: when destroyed, fill in a random hole that can't be accessed
+anchor: whilst this block is on the board, [COLOR] currency cannot go below 1
+ghoul: convert the next piece to a ghostly-piece
+cross: when destroyed, if this block is the only [COLOR] piece in the row, earns 20x points.
+nuke: when destroyed, if this block is the only [COLOR] piece in the row, destroy EVERY block.
+skull: when destroyed, if this block is the only [COLOR] piece in the row, destroy EVERY block.
+Jinx: on landing, the next piece becomes a 1x1 single block
+Debt: Adds +10 [COLOR] when destroyed, but costs 1 [COLOR] every turn it's on the board
+Veteran: Earns +1 bonus currency for every other block in your deck that shares its color.
+```
 
 
 
@@ -85,14 +115,24 @@ Block-sigils are like
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 ## VISUAL STYLE:
 Casual pixelart, dull color-palette, (similar to SNKRX, or Tiny-Rogues)
 
 For juice/animations,
 - try to use render primitives
-- 
-
-
+- make animations sharp and quick. E.g. spawn circle for 0.1 seconds. (looks really good)
 
 
 
